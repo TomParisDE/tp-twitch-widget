@@ -1,0 +1,219 @@
+.tp-ttvw-clearfix:before,
+.tp-ttvw-clearfix:after {
+    content: "";
+    display: table;
+}
+
+.tp-ttvw-clearfix:after {
+    clear: both;
+}
+
+.tp-ttvw-clearfix {
+    zoom: 1;
+}
+
+.ttvw {
+
+}
+
+/*
+Small Box
+*/
+
+.ttvw .tp-ttvw-small-box-live-pic {
+    float: left;
+    height: 45px;
+    width: auto;
+    margin-right: 10px;
+    margin-top: 0px;
+    padding-bottom: 2px;
+    border-radius: 0px;
+}
+
+.ttvw .tp-ttvw-small-box-name {
+    margin-top: 0px;
+}
+
+.ttvw .tp-ttvw-small-box-name a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.ttvw .tp-ttvw-punkt-small-box-offline {
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background-color: #B31217;
+    border-radius: 100%;
+}
+
+.ttvw .tp-ttvw-punkt-small-box-online {
+    background-color: lawngreen;
+    border-radius: 100%;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+}
+
+.ttvw .tp-ttvw-small-box-in-wrapper {
+    height: 49px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.ttvw .tp-ttvw-small-box-viewers {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: -4px;
+}
+
+/*
+Small Box Light
+*/
+
+.ttvw .tp-ttvw-small-box-in-wrapper.light {
+    background-color: #ffffff;
+}
+
+.ttvw .tp-ttvw-small-box-in-wrapper.light .tp-ttvw-small-box-viewers {
+    color: #000000;
+}
+
+/*
+Small Box Dark
+*/
+
+.ttvw .tp-ttvw-small-box-in-wrapper.dark {
+    background-color: #222222;
+}
+
+.ttvw .tp-ttvw-small-box-in-wrapper.dark .tp-ttvw-small-box-viewers {
+    color: #ffffff;
+}
+
+
+
+
+
+/*
+Big Box
+*/
+
+.ttvw .tp-ttvw-big-box-live-pic {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0px;
+}
+
+.ttvw .tp-ttvw-big-box-is-playing-wrapper {
+    line-height: 1em;
+    margin-top: 8px;
+}
+
+.ttvw .tp-ttvw-big-box-title-wrapper {
+    line-height: 1em;
+    margin-top: 12px;
+}
+
+.ttvw .tp-ttvw-big-box-stats {
+    text-align: right;
+    margin-top: 13px;
+}
+
+/*
+Big Box Light
+*/
+
+.ttvw .tp-ttvw-big-box-in-wrapper.light {
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.light .tp-ttvw-big-box-username {
+    color: #000000;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.light .tp-ttvw-big-box-is-playing-fix {
+    color: #000000;
+    font-weight: bolder;
+    font-size: 10px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.light .tp-ttvw-big-box-is-playing {
+    color: #000000;
+    font-size: 16px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.light .tp-ttvw-big-box-title-fix {
+    color: #000000;
+    font-weight: bolder;
+    font-size: 10px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.light .tp-ttvw-big-box-title {
+    color: #000000;
+    font-size: 14px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.light .tp-ttvw-big-box-stats-item {
+    color: #000000;
+    margin-left: 3px;
+    font-size: 12px;
+}
+
+/*
+Big Box Dark
+*/
+
+.ttvw .tp-ttvw-big-box-in-wrapper.dark {
+    color: #ffffff;
+    background-color: #222222;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.dark .tp-ttvw-big-box-username {
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.dark .tp-ttvw-big-box-is-playing-fix {
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 10px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.dark .tp-ttvw-big-box-is-playing {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.dark .tp-ttvw-big-box-title-fix {
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 10px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.dark .tp-ttvw-big-box-title {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.ttvw .tp-ttvw-big-box-in-wrapper.dark .tp-ttvw-big-box-stats-item {
+    color: #ffffff;
+    margin-left: 3px;
+    font-size: 12px;
+}
