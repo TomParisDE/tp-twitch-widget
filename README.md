@@ -1,6 +1,6 @@
 ![Banner](https://ps.w.org/tomparis-youtube-widget/assets/banner-772x250.png)
 
-# EDD Mailerlite
+# TomParisDE Twitch Widget
 [![Plugin Version](https://img.shields.io/wordpress/plugin/v/tomparis-youtube-widget.svg)](https://wordpress.org/plugins/tomparis-youtube-widget/) [![WordPress Version Compatibility](https://img.shields.io/wordpress/v/tomparis-youtube-widget.svg)](https://wordpress.org/plugins/tomparis-youtube-widget/) [![Downloads](https://img.shields.io/wordpress/plugin/dt/tomparis-youtube-widget.svg)](https://wordpress.org/plugins/tomparis-youtube-widget/) [![Rating](https://img.shields.io/wordpress/plugin/r/tomparis-youtube-widget.svg)](https://wordpress.org/plugins/tomparis-youtube-widget/)
 
 The TomParis Twitch Widget for WordPress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if your are a fansite or a clan.
@@ -31,4 +31,4 @@ The TomParis Twitch Widget for WordPress plugin allows you to show your visitors
 
 ### Credits
 
-This was developed by [flowdee](https://coder.tomparis.de/).
+This was developed by [TomParisDE](https://coder.tomparis.de/).
