@@ -167,7 +167,6 @@ class TP_TTVW_Widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'hide_offline_channels' ); ?>" name="<?php echo $this->get_field_name( 'hide_offline_channels' ); ?>" type="checkbox" value="1" <?php echo($instance['hide_offline_channels'] == 1 ? 'checked' : ''); ?>  >
         </p>
 
-
         <?php
     }
 

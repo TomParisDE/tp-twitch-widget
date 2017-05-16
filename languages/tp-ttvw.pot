@@ -51,6 +51,10 @@ msgstr ""
 msgid "Is Currently Playing:"
 msgstr ""
 
+#: ../includes/widget.php
+msgid "Twitch API Key:"
+msgstr ""
+
 #: ../views/widget_big.php:25 ../includes/widget.php:141
 msgid "Title:"
 msgstr ""

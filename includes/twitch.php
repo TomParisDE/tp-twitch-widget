@@ -21,7 +21,7 @@ function get_channel_data($channel)
     $data = array('username' => $channel);
 
     // Get basic data
-    $basic = tp_ttvw_get_data('https://api.twitch.tv/kraken/channels/' . $channel);
+    $basic = tp_ttvw_get_data('https://api.twitch.tv/kraken/channels/' . $channel . '?client_id=gwv0sykd1nhzig0g9mqv35aku4gs7w');
 
     $data['display_name'] = $basic['display_name'];
     $data['broadcaster_language'] = $basic['broadcaster_language'];
@@ -31,7 +31,7 @@ function get_channel_data($channel)
     $data['logo'] = $basic['logo'];
 
     // Get live data
-    $live = tp_ttvw_get_data('https://api.twitch.tv/kraken/streams/' . $channel);
+    $live = tp_ttvw_get_data('https://api.twitch.tv/kraken/streams/' . $channel . '?client_id=gwv0sykd1nhzig0g9mqv35aku4gs7w');
 
     if (!empty ($live['stream'])) {
         $data['live'] = true;
@@ -52,7 +52,7 @@ function get_channel_data($channel)
     } elseif (!empty ($data['logo'])) {
         $data['image'] = $data['logo'];
     } else {
-        $data['image'] = TP_TTVW_URL . 'assets/img/twitch-logo-45x45.png';
+        $data['image'] = TP_TTVW_URL . 'public/img/twitch-logo-45x45.png';
     }
 
     // Save cache
