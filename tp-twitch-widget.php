@@ -2,7 +2,7 @@
 /*
 Plugin Name: TomParisDE TwitchTV Widget
 Description: Your TomParisDE TwitchTV!
-Version: 1.0.0
+Version: 1.0.1
 Plugin URI: http://coder.tomparis.de/wordpress-twitch-plugin/
 Author: Florian 'TomParisDE' Kirchner
 Author URI: http://coder.tomparis.de/
@@ -60,7 +60,7 @@ if( !class_exists( 'TP_TTVW' ) ) {
                 private function setup_constants() {
 
                         // Plugin version
-                        define( 'TP_TTVW_VER', '1.0.0' );
+                        define( 'TP_TTVW_VER', '1.0.1' );
 
                         // Plugin path
                         define( 'TP_TTVW_DIR', plugin_dir_path( __FILE__ ) );

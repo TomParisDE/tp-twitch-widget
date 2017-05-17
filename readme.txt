@@ -1,10 +1,10 @@
 === TomParisDE Twitch Widget ===
 Contributors: TomParisDE
 Donate link: https://www.paypal.me/tomparis/
-Tags: twitch, api, widget, tomparis, tomparisde, twitch widget, twitchtv, twitchtv-integration
+Tags: twitch, api, widget, tomparis, tomparisde, twitch-widget, twitchtv, twitchtv-integration
 Requires at least: 3.5.1
 Tested up to: 4.7.5
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
