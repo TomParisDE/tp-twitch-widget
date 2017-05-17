@@ -1,13 +1,13 @@
-![Banner](https://ps.w.org/tomparisde-twitch-widget/assets/banner-772x250.png)
+![Banner](https://ps.w.org/tomparisde-twitchtv-widget/assets/banner-772x250.png)
 
 # TomParisDE Twitch Widget
-[![Plugin Version](https://img.shields.io/wordpress/plugin/v/tomparisde-twitch-widget.svg)](https://wordpress.org/plugins/tomparisde-twitch-widget/) [![WordPress Version Compatibility](https://img.shields.io/wordpress/v/tomparisde-twitch-widget.svg)](https://wordpress.org/plugins/tomparisde-twitch-widget/) [![Downloads](https://img.shields.io/wordpress/plugin/dt/tomparisde-twitch-widget.svg)](https://wordpress.org/plugins/tomparisde-twitch-widget/) [![Rating](https://img.shields.io/wordpress/plugin/r/tomparisde-twitch-widget.svg)](https://wordpress.org/plugins/tomparisde-twitch-widget/)
+[![Plugin Version](https://img.shields.io/wordpress/plugin/v/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/) [![WordPress Version Compatibility](https://img.shields.io/wordpress/v/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/) [![Downloads](https://img.shields.io/wordpress/plugin/dt/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/) [![Rating](https://img.shields.io/wordpress/plugin/r/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/)
 
 The TomParis Twitch Widget for WordPress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if your are a fansite or a clan.
 
 ## Description
 
-[Official WordPress.org Plugin](https://wordpress.org/plugins/tomparis-twitch-widget/)
+[Official WordPress.org Plugin](https://wordpress.org/plugins/tomparisde-twitchtv-widget/)
 
 ## Features
 
