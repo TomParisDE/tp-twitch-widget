@@ -26,8 +26,9 @@ class TP_TTVW_Widget extends WP_Widget {
      */
     public function widget( $args, $instance ) {
 
-        if ( ! empty ( $instance['channel'] ) ) {
+        if ( ! empty ( $instance['channel'] ) && ! empty ( $instance['api_key'] ) ) {
 
+            $api_key = $instance['api_key'];
             $hide_offline_channels = $instance['hide_offline_channels'];
             $template = $instance['template'];
             $style = " " . $instance['style'];
@@ -43,7 +44,7 @@ class TP_TTVW_Widget extends WP_Widget {
 
 
             foreach ( $channels as $channel ) {
-                $channels_data[] = get_channel_data( $channel );
+                $channels_data[] = get_channel_data( $api_key, $channel );
             }
 
             // if offline dont show
@@ -126,6 +127,7 @@ class TP_TTVW_Widget extends WP_Widget {
      * @param array $instance Previously saved values from database.
      */
     public function form( $instance ) {
+        $api_key = ! empty( $instance['api_key'] ) ? $instance['api_key'] : '';
         $title = ! empty( $instance['title'] ) ? $instance['title'] : '';
         $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : '';
         $hide_offline_channels = ! empty( $instance['hide_offline_channels'] ) ? $instance['hide_offline_channels'] : '';
@@ -133,6 +135,11 @@ class TP_TTVW_Widget extends WP_Widget {
         $style = ! empty( $instance['style'] ) ? $instance['style'] : '';
 
         ?>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php _e( 'Twitch API Key:', 'tp-ttvw' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>">
+        </p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'tp-ttvw' ); ?></label>
@@ -183,6 +190,7 @@ class TP_TTVW_Widget extends WP_Widget {
      */
     public function update( $new_instance, $old_instance ) {
         $instance = array();
+        $instance['api_key'] = ( ! empty( $new_instance['api_key'] ) ) ? strip_tags( $new_instance['api_key'] ) : '';
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
         $instance['channel'] = ( ! empty( $new_instance['channel'] ) ) ? strip_tags( $new_instance['channel'] ) : '';
         $instance['hide_offline_channels'] = ( ! empty( $new_instance['hide_offline_channels'] ) ) ? strip_tags( $new_instance['hide_offline_channels'] ) : '';

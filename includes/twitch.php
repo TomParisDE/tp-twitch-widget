@@ -8,7 +8,7 @@ function tp_debug($args)
 }
 
 
-function get_channel_data($channel)
+function get_channel_data($api_key, $channel)
 {
 
     // Get cache
@@ -21,7 +21,7 @@ function get_channel_data($channel)
     $data = array('username' => $channel);
 
     // Get basic data
-    $basic = tp_ttvw_get_data('https://api.twitch.tv/kraken/channels/' . $channel . '?client_id=gwv0sykd1nhzig0g9mqv35aku4gs7w');
+    $basic = tp_ttvw_get_data('https://api.twitch.tv/kraken/channels/' . $channel . '?client_id=' . $api_key);
 
     $data['display_name'] = $basic['display_name'];
     $data['broadcaster_language'] = $basic['broadcaster_language'];
@@ -31,7 +31,7 @@ function get_channel_data($channel)
     $data['logo'] = $basic['logo'];
 
     // Get live data
-    $live = tp_ttvw_get_data('https://api.twitch.tv/kraken/streams/' . $channel . '?client_id=gwv0sykd1nhzig0g9mqv35aku4gs7w');
+    $live = tp_ttvw_get_data('https://api.twitch.tv/kraken/streams/' . $channel . '?client_id=' . $api_key);
 
     if (!empty ($live['stream'])) {
         $data['live'] = true;
