@@ -3,7 +3,7 @@ Contributors: TomParisDE
 Donate link: https://www.paypal.me/tomparis/
 Tags: twitch, api, widget, tomparis, tomparisde, twitch widget, twitchtv, twitchtv-integration
 Requires at least: 3.5.1
-Tested up to: 4.7.4
+Tested up to: 4.7.5
 Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,7 +12,7 @@ Your TwitchTV Widget for Statistics and More!
 
 == Description ==
 
-The TomParis Twitch Widget for WordPress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if your are a fansite or a clan.
+The TomParisDE Twitch Widget for WordPress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if your are a fansite or a clan.
 
 = Features =
 
@@ -30,7 +30,7 @@ The TomParis Twitch Widget for WordPress plugin allows you to show your visitors
 * No expert knowledge needed!
 * Localization ready
 * No expert knowledge needed!
-* Responsive Design: Optimized for tables and smartphones
+* Responsive Design: Optimized for tablets and smartphones
 * You can show your visitors as many channels as you like
 * Hide offline channels
 
@@ -77,10 +77,16 @@ Yes of course.
 
 == Changelog ==
 
+= 1.0.1 =
+* Updated Core Files
+
 = 1.0.0 =
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Updated Core Files
 
 = 1.0.0 =
 * Initial release
