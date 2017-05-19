@@ -3,8 +3,7 @@
 # TomParisDE Twitch Widget
 [![Plugin Version](https://img.shields.io/wordpress/plugin/v/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/) [![WordPress Version Compatibility](https://img.shields.io/wordpress/v/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/) [![Downloads](https://img.shields.io/wordpress/plugin/dt/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/) [![Rating](https://img.shields.io/wordpress/plugin/r/tomparisde-twitchtv-widget.svg)](https://wordpress.org/plugins/tomparisde-twitchtv-widget/)
 
-The TomParis Twitch Widget for WordPress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if your are a fansite or a clan.
-
+The TomParisDE Twitch Widget for Wordpress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if will use it for a fansite or a clansite.
 ## Description
 
 [Official WordPress.org Plugin](https://wordpress.org/plugins/tomparisde-twitchtv-widget/)

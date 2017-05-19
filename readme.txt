@@ -12,7 +12,7 @@ Your TwitchTV Widget for Statistics and More!
 
 == Description ==
 
-The TomParisDE Twitch Widget for WordPress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if your are a fansite or a clan.
+The TomParisDE Twitch Widget for Wordpress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if will use it for a fansite or a clansite.
 
 = Features =
 
@@ -29,7 +29,6 @@ The TomParisDE Twitch Widget for WordPress plugin allows you to show your visito
 * Multilingual results (EN, DE)
 * No expert knowledge needed!
 * Localization ready
-* No expert knowledge needed!
 * Responsive Design: Optimized for tablets and smartphones
 * You can show your visitors as many channels as you like
 * Hide offline channels
@@ -45,7 +44,7 @@ The installation and configuration of the plugin is as simple as it can be.
 = Using The WordPress Dashboard =
 
 1. Navigate to the 'Add New' in the plugins dashboard
-2. Search for 'tp twitch widget'
+2. Search for 'TomParisDE Twitch Widget'
 3. Click 'Install Now'
 4. Activate the plugin on the Plugin dashboard
 
