@@ -7,8 +7,6 @@ function tp_debug($args)
     echo '</pre>';
 }
 
-// TP PRE!!
-
 function tp_get_channel_data( $api_key, $channel )
 {
 
@@ -74,7 +72,7 @@ function tp_get_channel_data( $api_key, $channel )
     return $data;
 }
 
-function tp_get_channels_game_data( $api_key, $twitch_game, $max_games, $twitch_streamer_language ){
+function tp_get_channel_or_game_data( $api_key, $twitch_game, $max_games, $twitch_streamer_language ){
 
     $transient_key = TP_TTVW_CACHE . serialize( $twitch_game . $max_games . $twitch_streamer_language );
 

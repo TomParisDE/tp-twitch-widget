@@ -17,7 +17,7 @@
             </div>
 
             <?php if ($channel['live']) { ?>
-                <div class="tp-ttvw-small-box-viewers">
+                <div class="tp-ttvw-small-box-viewers"<?php if (!empty($font_color)) echo ' style="color:' . $font_color . ';"'; ?>>
                     <span class="tp-ttvw-punkt-small-box-online"></span> <?php _e( 'Viewer:', 'tp-ttvw' ); ?> <?php echo $channel['viewers']; ?>
                 </div>
             <?php } else { ?>
