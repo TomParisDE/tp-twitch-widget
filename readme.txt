@@ -1,21 +1,22 @@
 === TomParisDE Twitch Widget ===
 Contributors: TomParisDE
 Donate link: https://www.paypal.me/tomparis/
-Tags: twitch, api, widget, tomparis, tomparisde, twitch-widget, twitchtv, twitchtv-integration
+Tags: twitch, api, widget, tomparis, tomparisde, twitchtv
 Requires at least: 3.5.1
 Tested up to: 4.7.5
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Your TwitchTV Widget for Statistics and More!
+Your TomParisDE Twitch Widget for Blogs, Clan-, Fan- and Community Sites
 
 == Description ==
 
-The TomParisDE Twitch Widget for Wordpress plugin allows you to show your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channels if will use it for a fansite or a clansite.
+The TomParisDE Twitch Widget for Wordpress allows you to show all your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channel if want to. It´s also possible to add one game with or without a specific language, it´s very handy for a theme based Clan-, Fan- or Community Site.
 
 = Features =
 
+* *new* Add on specific Game with or without a language to show all Twitch Streamer
 * Show your online and offline status
 * Show your currently playing game
 * Show your online title
@@ -32,6 +33,9 @@ The TomParisDE Twitch Widget for Wordpress plugin allows you to show your visito
 * Responsive Design: Optimized for tablets and smartphones
 * You can show your visitors as many channels as you like
 * Hide offline channels
+* Hide title
+* Hide statistics
+* Full
 
 = Credits =
 
@@ -76,6 +80,9 @@ Yes of course.
 
 == Changelog ==
 
+= 1.1.0 =
+* Added Clan-, Fan- and Community Site Feature
+
 = 1.0.1 =
 * Updated Core Files
 
@@ -83,6 +90,9 @@ Yes of course.
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* Added Clan-, Fan- and Community Site Feature
 
 = 1.0.1 =
 * Updated Core Files

@@ -11,8 +11,8 @@ class TP_TTVW_Widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'tp_ttvw_widget', // Base ID
-            __( 'TomParisDE TwitchTV Widget', 'tp-ttvw' ), // Name
-            array( 'description' => __( 'Your TwitchTV Widget to show you your online or offline status from your Twitch Stream', 'tp-ttvw' ), ) // Args
+            __( 'TomParisDE Twitch Widget', 'tp-ttvw' ), // Name
+            array( 'description' => __( 'The TomParisDE Twitch Widget for Wordpress allows you to show all your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channel if want to. It´s also possible to add one game with or without a specific language, it´s very handy for a theme based Clan-, Fan- or Community Site.', 'tp-ttvw' ), ) // Args
         );
     }
 
