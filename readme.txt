@@ -35,7 +35,6 @@ The TomParisDE Twitch Widget for Wordpress allows you to show all your visitors 
 * Hide offline channels
 * Hide title
 * Hide statistics
-* Full
 
 = Credits =
 
