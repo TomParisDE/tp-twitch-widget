@@ -26,12 +26,17 @@ class TP_TTVW_Widget extends WP_Widget {
      */
     public function widget( $args, $instance ) {
 
-        if ( ! empty ( $instance['channel'] ) && ! empty ( $instance['api_key'] ) ) {
+        if ( ! empty ( $instance['channel'] ) || ! empty ( $instance['twitch_game'] ) && ! empty ( $instance['api_key'] ) ) {
 
             $api_key = $instance['api_key'];
             $hide_offline_channels = $instance['hide_offline_channels'];
             $template = $instance['template'];
             $style = " " . $instance['style'];
+
+            $twitch_game = $instance['twitch_game'];
+            $max_games = $instance['max_games'];
+            $channels_game = $instance['channels_game'];
+            @$twitch_streamer_language = $instance['twitch_streamer_language'];
 
 
             // Data for output
@@ -43,9 +48,28 @@ class TP_TTVW_Widget extends WP_Widget {
             $channels = explode(",", $channels );
 
 
-            foreach ( $channels as $channel ) {
-                $channels_data[] = get_channel_data( $api_key, $channel );
+            // --------- IF ABFRAGE ---- START ------------- //
+
+            if ( $channels_game == 'channels' )
+            {
+                foreach ( $channels as $channel)
+                {
+                    $channels_data[] = tp_get_channel_data ( $api_key, $channel );
+                } }
+            else {
+                $channels_data = tp_get_channels_game_data( $api_key, $twitch_game, $max_games, $twitch_streamer_language );
             }
+
+
+
+            //  IF abfrage ---- IF NOT LEER
+            //  foreach ( $channels as $channel ) {
+            //     $channels_data[] = tp_get_channel_data( $api_key, $channel );
+            //}
+
+            // $channels_data = tp_get_channels_game_data( $api_key, $twitch_game, $max_games );
+
+            // --------- IF ABFRAGE ---- ENDE ------------- //
 
             // if offline dont show
             if ( $hide_offline_channels == '1') {
@@ -56,10 +80,10 @@ class TP_TTVW_Widget extends WP_Widget {
                 }
             }
 
-            // Sort by Viewers
-            if ( sizeof ( $channels_data ) > 0 ) {
+            // Sort by Viewers ( IS ARRAY )
+            if ( is_array($channels_data) && sizeof ( $channels_data ) > 0 ) {
                 foreach ($channels_data as $key => $row) {
-                    $viewers[$key] = $row['viewers'];
+                    @$viewers[$key] = $row['viewers'];
                 }
 
                 array_multisort($viewers, SORT_DESC, $channels_data);
@@ -134,12 +158,12 @@ class TP_TTVW_Widget extends WP_Widget {
         $template = ! empty( $instance['template'] ) ? $instance['template'] : '';
         $style = ! empty( $instance['style'] ) ? $instance['style'] : '';
 
-        ?>
+        $twitch_game = ! empty( $instance['twitch_game'] ) ? $instance['twitch_game'] : '';
+        $max_games = ! empty( $instance['max_games'] ) ? $instance['max_games'] : '';
+        $channels_game = ! empty( $instance['channels_game'] ) ? $instance['channels_game'] : '';
+        $twitch_streamer_language = ! empty( $instance['twitch_streamer_language'] ) ? $instance['twitch_streamer_language'] : '';
 
-        <p>
-            <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php _e( 'Twitch API Key:', 'tp-ttvw' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>">
-        </p>
+        ?>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'tp-ttvw' ); ?></label>
@@ -147,8 +171,37 @@ class TP_TTVW_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'channel' ); ?>"><?php _e( 'TwitchTV Channels:', 'tp-ttvw' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php _e( 'Twitch API Key:', 'tp-ttvw' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>">
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'channels_game' ); ?>"><?php _e( 'Channels or Game:', 'tp-ttvw' ); ?></label>
+
+            <select class="widefat" id="<?php echo $this->get_field_id( 'channels_game' ); ?>" name="<?php echo $this->get_field_name( 'channels_game' ); ?>">
+                <option value="channels"<?php selected( $channels_game, "Channels" ); ?>><?php _e( 'Channels', 'tp-ttvw' ); ?></option>
+                <option value="game"<?php selected( $channels_game, "Game" ); ?>><?php _e( 'Game', 'tp-ttvw' ); ?></option>
+            </select>
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'channel' ); ?>"><?php _e( 'Twitch Channels:', 'tp-ttvw' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'channel' ); ?>" name="<?php echo $this->get_field_name( 'channel' ); ?>" type="text" value="<?php echo esc_attr( $channel ); ?>">
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'twitch_game' ); ?>"><?php _e( 'Twitch Game:', 'tp-ttvw' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'twitch_game' ); ?>" name="<?php echo $this->get_field_name( 'twitch_game' ); ?>" type="text" value="<?php echo esc_attr( $twitch_game ); ?>">
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'max_games' ); ?>"><?php _e( 'Max Streams (1-100):', 'tp-ttvw' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'max_games' ); ?>" name="<?php echo $this->get_field_name( 'max_games' ); ?>" type="text" value="<?php echo esc_attr( $max_games ); ?>">
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'twitch_streamer_language' ); ?>"><?php _e( 'Twitch Streamer Language (1-100):', 'tp-ttvw' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'twitch_streamer_language' ); ?>" name="<?php echo $this->get_field_name( 'twitch_streamer_language' ); ?>" type="text" value="<?php echo esc_attr( $twitch_streamer_language ); ?>">
         </p>
 
         <p>
@@ -196,6 +249,11 @@ class TP_TTVW_Widget extends WP_Widget {
         $instance['hide_offline_channels'] = ( ! empty( $new_instance['hide_offline_channels'] ) ) ? strip_tags( $new_instance['hide_offline_channels'] ) : '';
         $instance['template'] = ( ! empty( $new_instance['template'] ) ) ? strip_tags( $new_instance['template'] ) : 'widget_small';
         $instance['style'] = ( ! empty( $new_instance['style'] ) ) ? strip_tags( $new_instance['style'] ) : 'light';
+
+        $instance['twitch_game'] = ( ! empty( $new_instance['twitch_game'] ) ) ? strip_tags( $new_instance['twitch_game'] ) : '';
+        $instance['max_games'] = ( ! empty( $new_instance['max_games'] ) ) ? strip_tags( $new_instance['max_games'] ) : '';
+        $instance['channels_game'] = ( ! empty( $new_instance['channels_game'] ) ) ? strip_tags( $new_instance['channels_game'] ) : '';
+        $instance['twitch_streamer_language'] = ( ! empty( $new_instance['twitch_streamer_language'] ) ) ? strip_tags( $new_instance['twitch_streamer_language'] ) : '';
 
         return $instance;
     }

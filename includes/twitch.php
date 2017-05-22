@@ -7,14 +7,15 @@ function tp_debug($args)
     echo '</pre>';
 }
 
+// TP PRE!!
 
-function get_channel_data($api_key, $channel)
+function tp_get_channel_data( $api_key, $channel )
 {
 
     // Get cache
     $cache = get_transient( TP_TTVW_CACHE . $channel );
 
-    if (!empty ($cache) || WP_DEBUG)  {
+    if (!empty ($cache) && !WP_DEBUG)  {
         return $cache;
     }
 
@@ -71,4 +72,72 @@ function get_channel_data($api_key, $channel)
     update_option( 'tp_ttvw_cache_transient_keys', $transient_keys );
 
     return $data;
+}
+
+function tp_get_channels_game_data( $api_key, $twitch_game, $max_games, $twitch_streamer_language ){
+
+    $transient_key = TP_TTVW_CACHE . serialize( $twitch_game . $max_games . $twitch_streamer_language );
+
+    // Get cache
+    $cache = get_transient( $transient_key );
+
+    if (!empty ($cache) && !WP_DEBUG ) {
+        return $cache;
+    }
+
+    $data = array();
+
+    // Get live data
+    $ergebnis = tp_ttvw_get_data('https://api.twitch.tv/kraken/streams/?game=' . $twitch_game . '&limit=' . $max_games . '&language=' . $twitch_streamer_language .'&client_id=' . $api_key);
+
+        foreach ( $ergebnis['streams'] as $item ) {
+
+            $data_stream = array();
+
+            $data_stream['live'] = true;
+
+            $data_stream['username'] = $item['channel']['name'];
+            $data_stream['display_name'] = $item['channel']['display_name'];
+            $data_stream['broadcaster_language'] = $item['channel']['broadcaster_language'];
+            $data_stream['channel_url'] = $item['channel']['url'];
+            $data_stream['views'] = $item['channel']['views'];
+            $data_stream['followers'] = $item['channel']['followers'];
+            $data_stream['logo'] = $item['channel']['logo'];
+
+            $data_stream['viewers'] = $item['viewers'];
+            $data_stream['preview'] = $item['preview']['small'];
+            $data_stream['preview_medium'] = $item['preview']['medium'];
+            $data_stream['preview_large'] = $item['preview']['large'];
+            // $data_stream['aktiv_game'] = $item['channel']['game'];
+            $data_stream['channel_title'] = $item['channel']['status'];
+
+            // Logic
+            if (!empty ($data_stream['preview'])) {
+                $data_stream['image'] = $data_stream['preview'];
+            } elseif (!empty ($data_stream['logo'])) {
+                $data_stream['image'] = $data_stream['logo'];
+            } else {
+                $data_stream['image'] = TP_TTVW_URL . 'public/img/twitch-logo-45x45.png';
+            }
+
+            $data[] = $data_stream;
+
+    }
+
+    // Save cache
+    $options = get_option('tp_ttvw');
+    $cache_duration = (isset ($options['cache_duration'])) ? intval($options['cache_duration']) : 600;
+    set_transient( $transient_key, $data, $cache_duration );
+
+    // Get the current list of transients.
+    $transient_keys = get_option( 'tp_ttvw_cache_transient_keys', array() );
+
+    // Appent new transient key
+    $transient_keys[] = $transient_key;
+
+    // Update the list of transients
+    update_option( 'tp_ttvw_cache_transient_keys', $transient_keys );
+
+    return $data;
+
 }
