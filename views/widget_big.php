@@ -4,6 +4,8 @@
 
         <div class="tp-ttvw-big-box-in-wrapper<?php echo $style; ?>">
 
+            <!-- LIVE VIEW OR PICTURE -- TOP -->
+
             <?php if ($banner_postion == 'top') { ?>
                 <div class="tp-ttvw-big-box-username" style="margin-top: -5px; margin-bottom: 5px">
                     <a target="_blank"
@@ -13,15 +15,45 @@
 
                 <div>
                     <a target="_blank" href="https://www.twitch.tv/<?php echo $channel['username']; ?>/">
-                        <img class="tp-ttvw-big-box-live-pic" src="<?php echo $channel['preview_large'] ?>"/>
+                        <?php if ($live_or_picture == 'twitch_picture') { ?>
+                            <img class="tp-ttvw-big-box-live-pic" src="<?php echo $channel['preview_large'] ?>"/>
+                        <?php } else { ?>
+
+                            <iframe
+                                src="http://player.twitch.tv/?channel=<?php echo $channel['display_name'] ?>&muted=true"
+                                height="<?php echo $live_or_picture_height ?>"
+                                width="<?php echo $live_or_picture_width ?>"
+                                frameborder="0"
+                                scrolling="no"
+                                allowfullscreen="true">
+                            </iframe>
+
+                        <?php } ?>
                     </a>
                 </div>
             <?php } ?>
 
+            <!-- LIVE VIEW OR PICTURE -- END -->
+
+            <!-- LIVE VIEW OR PICTURE -- MIDDLE -->
+
             <?php if ($banner_postion == 'middle') { ?>
             <div>
                 <a target="_blank" href="https://www.twitch.tv/<?php echo $channel['username']; ?>/">
-                    <img class="tp-ttvw-big-box-live-pic" src="<?php echo $channel['preview_large'] ?>"/>
+                    <?php if ($live_or_picture == 'twitch_picture') { ?>
+                        <img class="tp-ttvw-big-box-live-pic" src="<?php echo $channel['preview_large'] ?>"/>
+                    <?php } else { ?>
+
+                        <iframe
+                            src="http://player.twitch.tv/?channel=<?php echo $channel['display_name'] ?>&muted=true"
+                            height="<?php echo $live_or_picture_height ?>"
+                            width="<?php echo $live_or_picture_width ?>"
+                            frameborder="0"
+                            scrolling="no"
+                            allowfullscreen="true">
+                        </iframe>
+
+                    <?php } ?>
                 </a>
             </div>
 
@@ -31,6 +63,8 @@
                 </a>
             </div>
             <?php } ?>
+
+            <!-- LIVE VIEW OR PICTURE -- END -->
 
             <?php if (isset ($channel['aktiv_game']) ) { ?>
             <div class="tp-ttvw-big-box-is-playing-wrapper">

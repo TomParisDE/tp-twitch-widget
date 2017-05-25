@@ -12,7 +12,7 @@ class TP_TTVW_Widget extends WP_Widget {
         parent::__construct(
             'tp_ttvw_widget', // Base ID
             __( 'TomParisDE Twitch Widget', 'tp-ttvw' ), // Name
-            array( 'description' => __( 'The TomParisDE Twitch Widget for Wordpress allows you to show all your visitors your online or offline status from your twitch stream. You can also enter a lot more stream channel if want to. It´s also possible to add one game with or without a specific language, it´s very handy for a theme based Clan-, Fan- or Community Site.', 'tp-ttvw' ), ) // Args
+            array( 'description' => __( 'Your TomParisDE Twitch Widget for Blogs, Clan-, Fan- and Community Sites', 'tp-ttvw' ), ) // Args
         );
     }
 
@@ -40,6 +40,9 @@ class TP_TTVW_Widget extends WP_Widget {
             @$max_games = $instance['max_games'];
             @$channel_or_game = $instance['channel_or_game'];
             @$twitch_streamer_language = $instance['twitch_streamer_language'];
+            @$live_or_picture = $instance['live_or_picture'];
+            @$live_or_picture_height = $instance['live_or_picture_height'];
+            @$live_or_picture_width = $instance['live_or_picture_width'];
 
 
             // Data for output
@@ -156,6 +159,9 @@ class TP_TTVW_Widget extends WP_Widget {
         $max_games = ! empty( $instance['max_games'] ) ? $instance['max_games'] : '';
         $channel_or_game = ! empty( $instance['channel_or_game'] ) ? $instance['channel_or_game'] : '';
         $twitch_streamer_language = ! empty( $instance['twitch_streamer_language'] ) ? $instance['twitch_streamer_language'] : '';
+        $live_or_picture = ! empty( $instance['live_or_picture'] ) ? $instance['live_or_picture'] : '';
+        $live_or_picture_height = ! empty( $instance['live_or_picture_height'] ) ? $instance['live_or_picture_height'] : '';
+        $live_or_picture_width = ! empty( $instance['live_or_picture_width'] ) ? $instance['live_or_picture_width'] : '';
 
         ?>
 
@@ -183,7 +189,7 @@ class TP_TTVW_Widget extends WP_Widget {
         <p style="font-size: 24px; font-weight: 600;"><?php _e( 'Twitch Channel Settings', 'tp-ttvw' ); ?></p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'channel' ); ?>"><?php _e( 'Twitch Channels:', 'tp-ttvw' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'channel' ); ?>"><?php _e( 'Twitch Channel(s):', 'tp-ttvw' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'channel' ); ?>" name="<?php echo $this->get_field_name( 'channel' ); ?>" type="text" value="<?php echo esc_attr( $channel ); ?>">
         </p>
 
@@ -225,7 +231,26 @@ class TP_TTVW_Widget extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'banner_postion' ); ?>"><?php _e( 'Live Picture Position: (Big Template)', 'tp-ytw' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'live_or_picture' ); ?>"><?php _e( 'Live View or Live Preview Picture: (Big Template)', 'tp-ytw' ); ?></label>
+
+            <select class="widefat" id="<?php echo $this->get_field_id( 'live_or_picture' ); ?>" name="<?php echo $this->get_field_name( 'live_or_picture' ); ?>">
+                <option value="twitch_live"<?php selected( $live_or_picture, "twitch_live" ); ?>><?php _e( 'Live View', 'tp-ytw' ); ?></option>
+                <option value="twitch_picture"<?php selected( $live_or_picture, "twitch_picture" ); ?>><?php _e( 'Live Preview Picture', 'tp-ytw' ); ?></option>
+            </select>
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'live_or_picture_height' ); ?>"><?php _e( 'Live View (Height): (Big Template)', 'tp-ytw' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'live_or_picture_height' ); ?>" name="<?php echo $this->get_field_name( 'live_or_picture_height' ); ?>" placeholder="auto" type="text" value="<?php echo esc_attr( $live_or_picture_height ); ?>">
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'live_or_picture_width' ); ?>"><?php _e( 'Live View (Width): (Big Template)', 'tp-ytw' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'live_or_picture_width' ); ?>" name="<?php echo $this->get_field_name( 'live_or_picture_width' ); ?>" placeholder="auto" type="text" value="<?php echo esc_attr( $live_or_picture_width ); ?>">
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'banner_postion' ); ?>"><?php _e( 'Live View or Live Preview Picture Position: (Big Template)', 'tp-ytw' ); ?></label>
 
             <select class="widefat" id="<?php echo $this->get_field_id( 'banner_postion' ); ?>" name="<?php echo $this->get_field_name( 'banner_postion' ); ?>">
                 <option value="top"<?php selected( $banner_postion, "top" ); ?>><?php _e( 'Top', 'tp-ytw' ); ?></option>
@@ -283,6 +308,10 @@ class TP_TTVW_Widget extends WP_Widget {
         $instance['max_games'] = ( ! empty( $new_instance['max_games'] ) ) ? strip_tags( $new_instance['max_games'] ) : '';
         $instance['channel_or_game'] = ( ! empty( $new_instance['channel_or_game'] ) ) ? strip_tags( $new_instance['channel_or_game'] ) : '';
         $instance['twitch_streamer_language'] = ( ! empty( $new_instance['twitch_streamer_language'] ) ) ? strip_tags( $new_instance['twitch_streamer_language'] ) : '';
+        $instance['live_or_picture'] = ( ! empty( $new_instance['live_or_picture'] ) ) ? strip_tags( $new_instance['live_or_picture'] ) : '';
+        $instance['live_or_picture_height'] = ( ! empty( $new_instance['live_or_picture_height'] ) ) ? strip_tags( $new_instance['live_or_picture_height'] ) : '';
+        $instance['live_or_picture_width'] = ( ! empty( $new_instance['live_or_picture_width'] ) ) ? strip_tags( $new_instance['live_or_picture_width'] ) : '';
+
 
         return $instance;
     }

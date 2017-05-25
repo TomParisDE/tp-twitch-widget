@@ -10,23 +10,26 @@ The TomParisDE Twitch Widget for Wordpress allows you to show all your visitors 
 
 ## Features
 
-*   Show your online and offline status
-*   Show your currently playing game
-*   Show your online title
-*   Show the count of your live viewers
-*   Show the count of your overall views
-*   Show the count of your follower
-*   Super-fast for your server and visitors (Caching)
-*   Set up your Cache Time
-*   Widget for sidebars
-*   Four different Layouts
-*   Multilingual results (EN, DE)
-*   No expert knowledge needed!
-*   Localization ready
-*   No expert knowledge needed!
-*   Responsive Design: Optimized for tables and smartphones
-*   You can show your visitors as many channels as you like
-*   Hide offline channels
+*  Clan-, Fan- and Community Site Feature
+*  Show live View or live preview picture
+*  Show your online and offline status
+*  Show your currently playing game
+*  Show your online title
+*  Show the count of your live viewers
+*  Show the count of your overall views
+*  Show the count of your follower
+*  Super-fast for your server and visitors (Caching)
+*  Set up your Cache Time
+*  Widget for sidebars
+*  Different Layouts
+*  Multilingual results (EN, DE)
+*  No expert knowledge needed!
+*  Localization ready
+*  Responsive Design: Optimized for tablets and mobile phone
+*  You can show your visitors as many channels as you like
+*  Hide offline channels
+*  Hide title
+*  Hide statistics
 
 ### Credits
 
