@@ -3,8 +3,8 @@ Contributors: TomParisDE
 Donate link: https://www.paypal.me/tomparis/
 Tags: twitch, api, widget, tomparis, tomparisde, twitchtv
 Requires at least: 3.5.1
-Tested up to: 4.7.5
-Stable tag: 1.1.1
+Tested up to: 4.8.1
+Stable tag: 1.1.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -80,6 +80,9 @@ Yes of course.
 
 == Changelog ==
 
+= 1.1.2 =
+* Added option to remove specific channel form channel list
+
 = 1.1.1 =
 * Added Live View for Twitch Stream
 
@@ -93,6 +96,9 @@ Yes of course.
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1.2 =
+* Added option to remove specific channel form channel list
 
 = 1.1.1 =
 * Added Live View for Twitch Stream
