@@ -27,6 +27,7 @@ The TomParisDE Twitch Widget for Wordpress allows you to show all your visitors 
 *  Localization ready
 *  Responsive Design: Optimized for tablets and mobile phone
 *  You can show your visitors as many channels as you like
+*  Hide channel(s) in your channel list
 *  Hide offline channels
 *  Hide title
 *  Hide statistics
